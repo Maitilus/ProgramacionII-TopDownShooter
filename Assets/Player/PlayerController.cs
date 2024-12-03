@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     [Header("Player Stats")]
     public float MoveSpeed;
     [Tooltip("Movement Speed of the Character")]
-    public float Health = 100;
-    [Tooltip("The Ammount of hitpoints of the player")]
 
     [Header("PlayerLinks")]
     public Rigidbody2D rb;
@@ -17,31 +15,36 @@ public class PlayerController : MonoBehaviour
 
     public Weapon Weapon;
   
-    private Vector2 MoveDirection;
+    public Vector2 PlayerInput;
     private Vector2 MousePosition;
+    public Transform Crosshair;
+
 
     #endregion
 
+    void Start()
+    {
+        Cursor.visible = false;
+    }
+
     void Update()
     {
-        float MoveX = Input.GetAxisRaw("Horizontal");
-        float MoveY = Input.GetAxisRaw("Vertical");
+        PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
         if (Input.GetMouseButton(0) && Weapon.CanFire)
         {
             StartCoroutine(Weapon.Fire());
         }
-
-        MoveDirection = new Vector2(MoveX, MoveY).normalized;
-        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        //Set Player velocity
-        rb.linearVelocity = new Vector2(MoveDirection.x * MoveSpeed, MoveDirection.y * MoveSpeed);
+        Vector2 moveForce = PlayerInput * MoveSpeed;
+        rb.linearVelocity = moveForce;          
 
-        //Modify Player Aim With Cursor
+
+        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Crosshair.position = MousePosition;
+
         Vector2 AimDirection = MousePosition - rb.position;
         float AimAngle = Mathf.Atan2(AimDirection.y, AimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = AimAngle;

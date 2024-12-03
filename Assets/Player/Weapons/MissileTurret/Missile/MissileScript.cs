@@ -13,7 +13,7 @@ public class MissileScript : MonoBehaviour
     [SerializeField] float Damage = 65;
 
     //Locked Target
-    [SerializeField] Transform LockedTarget;
+    public Transform LockedTarget;
 
     public GameObject Explosion;
 
@@ -73,9 +73,8 @@ public class MissileScript : MonoBehaviour
             var HitColliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
             foreach (var HitCollider in HitColliders)
             {
-                if (HitCollider.gameObject.TryGetComponent<Enemy>(out Enemy enemyComponent))
+                if (HitCollider.gameObject.TryGetComponent<HealthComponent>(out HealthComponent enemyComponent))
                 {
-                    Debug.Log("boom");
                     enemyComponent.TakeDamage(Damage);
                 }
             }

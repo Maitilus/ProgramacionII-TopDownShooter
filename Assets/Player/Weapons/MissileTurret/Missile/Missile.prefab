@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906a5c3307830dfff998696277cca866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 20
   Steer: 30
-  SplashRange: 1
-  Damage: 65
+  SplashRange: 1.5
+  Damage: 50
   LockedTarget: {fileID: 0}
   Explosion: {fileID: 8081130244648336903, guid: cb47886d6e639dcd484d37e13e3ba45b, type: 3}
 --- !u!70 &-5763812081681195691

@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Weapon Weapon;
     public float Lifetime = 2;
-    public int Damage = 2;
+    public int Damage = 15;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -12,9 +11,9 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
 
         //Destroy the Enemy
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.TryGetComponent<HealthComponent>(out HealthComponent enemyComponent))
         {
-            Destroy(collision.gameObject);
+            enemyComponent.TakeDamage(Damage);
         }
     }
 
