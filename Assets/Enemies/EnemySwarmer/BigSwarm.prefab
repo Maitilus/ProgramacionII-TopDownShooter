@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &5263336384870837925
 Rigidbody2D:
   serializedVersion: 5
@@ -373,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &8243417132357373378
 Rigidbody2D:
   serializedVersion: 5
@@ -554,6 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &3747177580305454770
 Rigidbody2D:
   serializedVersion: 5
@@ -735,6 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &2967809110842194377
 Rigidbody2D:
   serializedVersion: 5
@@ -916,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &2521575814130837935
 Rigidbody2D:
   serializedVersion: 5
@@ -1097,6 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &3187725678569955676
 Rigidbody2D:
   serializedVersion: 5
@@ -1278,6 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
+  Damage: 5
 --- !u!50 &2652557556682234769
 Rigidbody2D:
   serializedVersion: 5

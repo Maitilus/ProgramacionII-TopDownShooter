@@ -185,7 +185,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 4757573533495938369, guid: fc3e23a140803137e9ca319c35f5a6d1, type: 3}
   BulletSpawn: {fileID: 3071510025645174353}
   FireForce: 5
-  RPS: 1.5
+  RPS: 1
   CanFire: 1
 --- !u!70 &2861033282381128454
 CapsuleCollider2D:
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0
+  Damage: 5
 --- !u!50 &4185944104684817451
 Rigidbody2D:
   serializedVersion: 5

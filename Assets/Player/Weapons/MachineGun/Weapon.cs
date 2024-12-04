@@ -17,11 +17,17 @@ public class Weapon : MonoBehaviour
     public float FireForce;
     [Tooltip("The Speed of the Projectile")]
     public float RPS;
+    [HideInInspector] public float RegularRPS;
 
     bool LeftCannonUsed;
     public bool CanFire = true;
 
     #endregion
+
+    void Start()
+    {
+        RegularRPS = RPS;
+    }
 
     public IEnumerator Fire()
     {

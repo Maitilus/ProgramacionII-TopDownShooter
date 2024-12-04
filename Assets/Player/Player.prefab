@@ -375,6 +375,8 @@ MonoBehaviour:
   MoveSpeed: 10
   rb: {fileID: 4970415712678180846}
   Weapon: {fileID: 7132480090811277938}
+  PlayerInput: {x: 0, y: 0}
+  Crosshair: {fileID: 0}
 --- !u!50 &4970415712678180846
 Rigidbody2D:
   serializedVersion: 5

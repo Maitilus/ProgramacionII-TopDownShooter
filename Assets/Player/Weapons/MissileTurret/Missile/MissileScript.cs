@@ -62,7 +62,7 @@ public class MissileScript : MonoBehaviour
         LockedTarget = ClosestTarget.transform; 
     }
 
-    void OnCollisionEnter2D(Collision2D MissileCollision)
+    void OnTriggerEnter2D(Collider2D MissileCollision)
     {
         if (MissileCollision.gameObject.CompareTag("Enemy"))
         {
