@@ -9,13 +9,16 @@ public class MissileScript : MonoBehaviour
     [SerializeField] float Speed = 10f;
     [SerializeField] float Steer = 30f;
     float Lifetime = 12f;
-    [SerializeField] float SplashRange = 1;
-    [SerializeField] float Damage = 65;
+    public float SplashRange = 1.5f;
+    public float RegularSplashRange = 1.5f;
+    public float Damage = 50;
+    public float RegularDamage;
 
     //Locked Target
     public Transform LockedTarget;
 
     public GameObject Explosion;
+    public GameObject RegularExplosion;
 
     Rigidbody2D rb;
     #endregion
@@ -23,6 +26,9 @@ public class MissileScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        RegularSplashRange = SplashRange;
+        RegularExplosion = Explosion;
+        RegularDamage = Damage;
     }
 
     private void FixedUpdate()
@@ -73,7 +79,7 @@ public class MissileScript : MonoBehaviour
             var HitColliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
             foreach (var HitCollider in HitColliders)
             {
-                if (HitCollider.gameObject.TryGetComponent<HealthComponent>(out HealthComponent enemyComponent))
+                if (HitCollider.gameObject.TryGetComponent<HealthComponent>(out HealthComponent enemyComponent) && HitCollider.gameObject.CompareTag("Enemy"))
                 {
                     enemyComponent.TakeDamage(Damage);
                 }

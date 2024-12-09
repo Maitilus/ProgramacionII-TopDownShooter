@@ -1,5 +1,7 @@
-    using System.ComponentModel;
+using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 PlayerInput;
     private Vector2 MousePosition;
     public Transform Crosshair;
+    public GameObject GameOverText;
 
 
     #endregion
@@ -35,6 +38,10 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Weapon.Fire());
         }
+        if (gameObject.TryGetComponent<HealthComponent>(out HealthComponent PlayerHealth) && PlayerHealth.CurrentHealth <= 0)
+        {
+            StartCoroutine(GameOver());
+        }
     }
     void FixedUpdate()
     {
@@ -48,5 +55,14 @@ public class PlayerController : MonoBehaviour
         Vector2 AimDirection = MousePosition - rb.position;
         float AimAngle = Mathf.Atan2(AimDirection.y, AimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = AimAngle;
+    }
+
+    IEnumerator GameOver()
+    {
+        Time.timeScale = 0.5f;
+        GameOverText.SetActive(true);
+        yield return new WaitForSeconds(3);
+        Cursor.visible = true;
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -59,5 +60,22 @@ public class Weapon : MonoBehaviour
         float TimeToNextFire = 1 / RPS;
         yield return new WaitForSeconds(TimeToNextFire);
         CanFire = true;
+    }
+
+    //Este power up es mi descenso a la locura
+    void OnTriggerEnter2D(Collider2D PickUp)
+    {
+        if (PickUp.gameObject.TryGetComponent<FireRatePowerUp>(out FireRatePowerUp FireRatePowerUp))
+        {
+            StartCoroutine(FireRatePowerUpStart());
+            FireRatePowerUp.DestroyOnPickup();
+        }
+    }
+
+    IEnumerator FireRatePowerUpStart()
+    {
+        RPS *= 2;
+        yield return new WaitForSeconds(10);
+        RPS = RegularRPS;
     }
 }

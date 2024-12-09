@@ -15,12 +15,17 @@ public class MissileTurretScript : MonoBehaviour
     [Tooltip("Link The SpawnPont for the Projectile")]
 
     [Header("Stats of the Weapon")]
-    [SerializeField] float RPS;
+    public float RPS;
+    public float RegularRPS;
 
     [HideInInspector] public bool CanFire = true;
 
     #endregion
 
+    void Start()
+    {
+        RegularRPS = RPS;
+    }
 
     void Update()
     {

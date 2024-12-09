@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 646664171736592175}
   - component: {fileID: 9031862521232852510}
   - component: {fileID: 8451080614435086618}
+  - component: {fileID: -2240167407372781269}
   m_Layer: 0
   m_Name: SwarmerObj
   m_TagString: Enemy
@@ -182,3 +183,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2240167407372781269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9015173669054360373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404637335182d761a6454bcbb7d038c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropChance: 5
+  ItemPool:
+  - {fileID: 7703019895969660873, guid: 76e4d4d8e29a3835ebdbba7053c3a8b0, type: 3}

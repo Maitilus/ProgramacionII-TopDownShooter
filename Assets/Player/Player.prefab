@@ -202,6 +202,7 @@ MonoBehaviour:
   RBulletSpawn: {fileID: 3761811221467697773}
   FireForce: 4
   RPS: 4
+  RegularRPS: 0
   CanFire: 1
 --- !u!1 &3961019901118429761
 GameObject:
@@ -521,6 +522,7 @@ MonoBehaviour:
   MissilePrefab: {fileID: 5348927488296230557, guid: 8cb7354f3358bdc7ba8f6342aaf2173f, type: 3}
   MissileSpawn: {fileID: 3921736417477710251}
   RPS: 0.1
+  RegularRPS: 0
   CanFire: 1
 --- !u!1 &6923947075283063205
 GameObject:
