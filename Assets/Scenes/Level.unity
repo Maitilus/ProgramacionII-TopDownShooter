@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 891174620448372648, guid: faff7d1c81f0b030e9e80288732a6445, type: 3}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MaxSpawnInterval
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MinSpawnInterval
@@ -746,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 891174620448372648, guid: faff7d1c81f0b030e9e80288732a6445, type: 3}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MaxSpawnInterval
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MinSpawnInterval
@@ -2265,7 +2265,7 @@ PrefabInstance:
       objectReference: {fileID: 891174620448372648, guid: faff7d1c81f0b030e9e80288732a6445, type: 3}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MaxSpawnInterval
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MinSpawnInterval
@@ -2535,7 +2535,7 @@ PrefabInstance:
       objectReference: {fileID: 891174620448372648, guid: faff7d1c81f0b030e9e80288732a6445, type: 3}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MaxSpawnInterval
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3626745408619343800, guid: de132b5f38180694b8dfa608b4c8b228, type: 3}
       propertyPath: MinSpawnInterval

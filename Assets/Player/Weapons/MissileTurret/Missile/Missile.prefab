@@ -134,6 +134,7 @@ MonoBehaviour:
   SplashRange: 1.5
   RegularSplashRange: 1.5
   Damage: 50
+  RegularDamage: 0
   LockedTarget: {fileID: 0}
   Explosion: {fileID: 8081130244648336903, guid: cb47886d6e639dcd484d37e13e3ba45b, type: 3}
   RegularExplosion: {fileID: 8081130244648336903, guid: cb47886d6e639dcd484d37e13e3ba45b, type: 3}
