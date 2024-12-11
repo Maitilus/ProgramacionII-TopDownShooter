@@ -36,33 +36,28 @@ public class Weapon : MonoBehaviour
 
         if (!LeftCannonUsed)
         {
-            //Create the Bullet and Add Force
             GameObject Bullet = Instantiate(BulletPrefab, LBulletSpawn.position, LBulletSpawn.rotation);
             Bullet.GetComponent<Rigidbody2D>().AddForce(LBulletSpawn.up * FireForce, ForceMode2D.Impulse);
             LeftCannonUsed = true;
         }
         else if (LeftCannonUsed)
         {
-            //Create the Bullet and Add Force
             GameObject Bullet = Instantiate(BulletPrefab, RBulletSpawn.position, RBulletSpawn.rotation);
             Bullet.GetComponent<Rigidbody2D>().AddForce(RBulletSpawn.up * FireForce, ForceMode2D.Impulse);
             LeftCannonUsed = false;
         }
 
-        //Shot CoolDown
         StartCoroutine(FireRateHander());
         yield return null;
     }
 
     IEnumerator FireRateHander()
     {
-        //Calculate the Fire Rate
         float TimeToNextFire = 1 / RPS;
         yield return new WaitForSeconds(TimeToNextFire);
         CanFire = true;
     }
 
-    //Este power up es mi descenso a la locura
     void OnTriggerEnter2D(Collider2D PickUp)
     {
         if (PickUp.gameObject.TryGetComponent<FireRatePowerUp>(out FireRatePowerUp FireRatePowerUp))

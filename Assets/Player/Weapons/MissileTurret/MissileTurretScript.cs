@@ -38,17 +38,14 @@ public class MissileTurretScript : MonoBehaviour
     {
         CanFire = false;
 
-        //Spawn the Missile
         GameObject Bullet = Instantiate(MissilePrefab, MissileSpawn.position, MissileSpawn.rotation);
 
-        //Shot CoolDown
         StartCoroutine(FireRateHanlder());
         yield return null;
     }
 
     IEnumerator FireRateHanlder()
     {
-        //Calculate the Fire Rate
         float TimeToNextFire = 1 / RPS;
         yield return new WaitForSeconds(TimeToNextFire);
         CanFire = true;

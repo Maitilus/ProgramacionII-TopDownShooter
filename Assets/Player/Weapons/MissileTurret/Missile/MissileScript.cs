@@ -14,7 +14,6 @@ public class MissileScript : MonoBehaviour
     public float Damage = 50;
     public float RegularDamage;
 
-    //Locked Target
     public Transform LockedTarget;
 
     public GameObject Explosion;
@@ -33,7 +32,6 @@ public class MissileScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Set the Speed And Homing values
         rb.linearVelocity = transform.up * Speed * Time.deltaTime * 10f;
         Vector2 direction = (LockedTarget.position - transform.position).normalized;
         float RotationSteer = Vector3.Cross(transform.up, direction).z;
@@ -44,19 +42,15 @@ public class MissileScript : MonoBehaviour
     {
         Destroy(gameObject, Lifetime);
 
-        //Find All enemies
         GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        //Declare var for Closest
         GameObject ClosestTarget = null;
         float DistanceToClosestTarget = 0;
 
-        //Search for Closest
         foreach(GameObject Enemy in Enemies)
         {
             float DistanceToTarget = Vector3.Distance(transform.position, Enemy.transform.position);
             
-            //Compare Distance
             if(ClosestTarget == null || DistanceToTarget < DistanceToClosestTarget)
             {
                 DistanceToClosestTarget = DistanceToTarget;
@@ -64,7 +58,6 @@ public class MissileScript : MonoBehaviour
             }
         }
 
-        //Set Target
         LockedTarget = ClosestTarget.transform; 
     }
 

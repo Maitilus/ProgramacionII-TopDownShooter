@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Stats")]
     public float MoveSpeed;
-    [Tooltip("Movement Speed of the Character")]
+
 
     [Header("PlayerLinks")]
     public Rigidbody2D rb;
-    [Tooltip("Link the RigidBody2D")]
+
 
     public Weapon Weapon;
   

@@ -30,7 +30,6 @@ public class TurretAttack : MonoBehaviour
 
     IEnumerator FireRateHander()
     {
-        //Calculate the Fire Rate
         float TimeToNextFire = 1 / RPS;
         yield return new WaitForSeconds(TimeToNextFire);
         CanFire = true;

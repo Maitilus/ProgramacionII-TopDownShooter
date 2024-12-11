@@ -11,7 +11,6 @@ public class PlaneAttack : MonoBehaviour
     public float RPS;
     public bool CanFire = true;
 
-    // Update is called once per frame
     void Update()
     {
         if (CanFire)
@@ -35,7 +34,6 @@ public class PlaneAttack : MonoBehaviour
 
     IEnumerator FireRateHander()
     {
-        //Calculate the Fire Rate
         float TimeToNextFire = 1 / RPS;
         yield return new WaitForSeconds(TimeToNextFire);
         CanFire = true;

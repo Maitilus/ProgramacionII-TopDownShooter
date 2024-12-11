@@ -15,7 +15,6 @@ public class FlyingComponent : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Set the Speed And Homing values
         rb.linearVelocity = transform.up * Speed * Time.deltaTime * 10f;
         Vector2 direction = (Target.position - transform.position).normalized;
         float RotationSteer = Vector3.Cross(transform.up, direction).z;     
